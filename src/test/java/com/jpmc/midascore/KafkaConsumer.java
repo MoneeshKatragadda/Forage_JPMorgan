@@ -63,6 +63,5 @@ public class KafkaConsumer {
         if (recipient.getName().equals("wilbur")) {
             System.out.println("wilbur Balance: " + recipient.getBalance());
         }
-
     }
 }
