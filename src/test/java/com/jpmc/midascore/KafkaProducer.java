@@ -18,10 +18,11 @@ public class KafkaProducer {
     public void send(String transactionLine) {
 
         String[] lines = transactionLine.split("\\n");
-
+        //The complete records are being taken as a single element
+        
         for (String line : lines) {
             String[] transactionData = line.split(", ");
-            System.out.println("Sending: " + line);
+            System.out.println("Sending: " + line); //Debugging
             kafkaTemplate.send(topic, Long.parseLong(transactionData[0]) + ", " + Long.parseLong(transactionData[1]) + ", " + Float.parseFloat(transactionData[2]));
         }
     }
